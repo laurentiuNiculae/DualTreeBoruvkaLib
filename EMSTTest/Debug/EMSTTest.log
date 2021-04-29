@@ -1,0 +1,101 @@
+﻿  pch.cpp
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNode.h(2,1): warning C4005: 'INFINITY': macro redefinition
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h(90): message : see previous definition of 'INFINITY'
+  test.cpp
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(70,2): warning C4244: 'argument': conversion from 'double' to 'RawType', possible loss of data
+          with
+          [
+              RawType=float
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Point.h(82,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Point.h(79): message : while compiling class template member function 'std::string Point<2>::toString(void)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(166): message : see reference to function template instantiation 'std::string Point<2>::toString(void)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(10): message : see reference to class template instantiation 'Point<2>' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(61,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(57): message : while compiling class template member function 'void DualTreeBoruvka<3>::findEMST(KDNode<3> *,int)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(132): message : see reference to function template instantiation 'void DualTreeBoruvka<3>::findEMST(KDNode<3> *,int)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(130): message : see reference to class template instantiation 'DualTreeBoruvka<3>' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(146,20): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(142): message : while compiling class template member function 'KDNode<3> *KDTree<3>::buildTree(std::vector<Point<3> *,std::allocator<Point<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(53): message : see reference to function template instantiation 'KDNode<3> *KDTree<3>::buildTree(std::vector<Point<3> *,std::allocator<Point<3> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(51): message : while compiling class template member function 'KDTree<3>::KDTree(int,std::vector<Point<3> *,std::allocator<Point<3> *>>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(77): message : see reference to function template instantiation 'KDTree<3>::KDTree(int,std::vector<Point<3> *,std::allocator<Point<3> *>>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(77): message : see reference to class template instantiation 'KDTree<3>' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(158,1): warning C4305: '=': truncation from '__int64' to '_Ty2'
+          with
+          [
+              _Ty2=float
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(155): message : while compiling class template member function 'void DualTreeBoruvka<3>::UpdateTree(KDNode<3> *)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(71): message : see reference to function template instantiation 'void DualTreeBoruvka<3>::UpdateTree(KDNode<3> *)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(42): message : while compiling class template member function 'DualTreeBoruvka<3>::DualTreeBoruvka(KDTree<3> &,std::vector<Point<3> *,std::allocator<Point<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTTest\test.cpp(130): message : see reference to function template instantiation 'DualTreeBoruvka<3>::DualTreeBoruvka(KDTree<3> &,std::vector<Point<3> *,std::allocator<Point<3> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(162,1): warning C4305: '=': truncation from '__int64' to '_Ty2'
+          with
+          [
+              _Ty2=float
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(192,1): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=__int64
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(51): message : see reference to function template instantiation 'std::pair<conexComponent<3> *,float>::pair<conexComponent<3>*&,__int64,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=conexComponent<3> *&,
+              _Other2=__int64
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(51): message : see reference to function template instantiation 'std::pair<conexComponent<3> *,float>::pair<conexComponent<3>*&,__int64,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=conexComponent<3> *&,
+              _Other2=__int64
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(187,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(183): message : while compiling class template member function 'int KDTree<3>::spreadest(int,std::vector<Point<3> *,std::allocator<Point<3> *>>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(153): message : see reference to function template instantiation 'int KDTree<3>::spreadest(int,std::vector<Point<3> *,std::allocator<Point<3> *>>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(142): message : while compiling class template member function 'KDNode<3> *KDTree<3>::buildTree(std::vector<Point<3> *,std::allocator<Point<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(53): message : see reference to function template instantiation 'KDNode<3> *KDTree<3>::buildTree(std::vector<Point<3> *,std::allocator<Point<3> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(198,17): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(215,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(211): message : while compiling class template member function 'std::pair<std::vector<Point<3> *,std::allocator<Point<3> *>>,std::vector<Point<3> *,std::allocator<Point<3> *>>> &KDTree<3>::splitVector(int,float,std::vector<Point<3> *,std::allocator<Point<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(161): message : see reference to function template instantiation 'std::pair<std::vector<Point<3> *,std::allocator<Point<3> *>>,std::vector<Point<3> *,std::allocator<Point<3> *>>> &KDTree<3>::splitVector(int,float,std::vector<Point<3> *,std::allocator<Point<3> *>> &)' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(192,1): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(133): message : see reference to function template instantiation 'std::pair<KDNode<3> *,float>::pair<KDNode<3>*&,int,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=KDNode<3> *&,
+              _Other2=int
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(133): message : see reference to function template instantiation 'std::pair<KDNode<3> *,float>::pair<KDNode<3>*&,int,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=KDNode<3> *&,
+              _Other2=int
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(92): message : while compiling class template member function 'void DualTreeBoruvka<3>::FindComponentNeighbors(KDNode<3> *,KDNode<3> *,std::vector<Edge<3> *,std::allocator<Edge<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(64): message : see reference to function template instantiation 'void DualTreeBoruvka<3>::FindComponentNeighbors(KDNode<3> *,KDNode<3> *,std::vector<Edge<3> *,std::allocator<Edge<3> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeNonTerminal.h(29,1): warning C4305: '=': truncation from '__int64' to 'float'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeNonTerminal.h(26): message : while compiling class template member function 'KDNodeNonTerminal<2>::KDNodeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(178): message : see reference to function template instantiation 'KDNodeNonTerminal<2>::KDNodeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(177): message : while compiling class template member function 'KDNode<2> *KDTree<2>::makeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(162): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::makeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeTerminal.h(28,1): warning C4305: '=': truncation from '__int64' to 'float'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeTerminal.h(25): message : while compiling class template member function 'KDNodeTerminal<3>::KDNodeTerminal(std::vector<Point<3> *,std::allocator<Point<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(172): message : see reference to function template instantiation 'KDNodeTerminal<3>::KDNodeTerminal(std::vector<Point<3> *,std::allocator<Point<3> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(167): message : while compiling class template member function 'KDNode<3> *KDTree<3>::makeTerminal(std::vector<Point<3> *,std::allocator<Point<3> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(148): message : see reference to function template instantiation 'KDNode<3> *KDTree<3>::makeTerminal(std::vector<Point<3> *,std::allocator<Point<3> *>> &)' being compiled
+  EMSTTest.vcxproj -> C:\Users\theme\source\repos\EMSTLicenta\Debug\EMSTTest.exe
