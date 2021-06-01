@@ -75,10 +75,10 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 			pointSet.Union(i.second->getNode1(), i.second->getNode2());
 			E.emplace(*i.second);
 		}
-		for (auto i : E)
-		{
-			cout << i.toString() << "\n";
-		}
+		//for (auto i : E)
+		//{
+		//	cout << i.toString() << "\n";
+		//}
 		
 		UpdateTree(q);
 		updateFullyConnectedStates(q);
@@ -99,8 +99,9 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 	{
 		return;
 	}
-	if (bbDistance(Q->getbb(), R->getbb()) > dQ[Q])
+	if (dQ[Q] != 0 && bbDistance(Q->getbb(), R->getbb()) > dQ[Q])
 	{
+		//std::cout << bbDistance(Q->getbb(), R->getbb());
 		return;
 	}
 	if (Q->isTerminal() && R->isTerminal())
@@ -131,7 +132,8 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 				}
 			}
 		}
-		dQ.insert(pair<KDNode<D>*, float>(Q, 0));
+		//dQ.insert(pair<KDNode<D>*, float>(Q, 0));
+		dQ[Q] = 0;
 		for (auto q : ((KDNodeTerminal<D>*)Q)->getPoints())
 		{
 			if (dQ[Q] < dCq[pointSet.Find(q)])
