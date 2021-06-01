@@ -6,11 +6,11 @@ template <int D>
 class KDNodeNonTerminal : public KDNode<D>
 {
 	int d;
-	float p;
+	Point<D>* p;
 	KDNode<D>* left;
 	KDNode<D>* right;
 public:
-	KDNodeNonTerminal(int d, float p, KDNode<D>* left, KDNode<D>* right);
+	KDNodeNonTerminal(int d, Point<D>* p, BoundingBox<D> bb, KDNode<D>* left, KDNode<D>* right);
 	bool isTerminal();
 	int getDimension();
 	float getMedian();
@@ -22,12 +22,12 @@ public:
 
 
 template <int D>
-KDNodeNonTerminal<D>::KDNodeNonTerminal(int d, float p, KDNode<D>* left, KDNode<D>* right)
+KDNodeNonTerminal<D>::KDNodeNonTerminal(int d, Point<D>* p, BoundingBox<D> bb, KDNode<D>* left, KDNode<D>* right)
 	: d(d), p(p), left(left), right(right)
 {
 	this->allConnected = false;
 	this->upperBound = INFINITY;
-	this->bb = BoundingBox<D>(left->bb, right->bb);
+	this->bb = bb;
 }
 
 template <int D>
@@ -45,7 +45,7 @@ int KDNodeNonTerminal<D>::getDimension()
 template <int D>
 float KDNodeNonTerminal<D>::getMedian()
 {
-	return this->p;
+	return (*this->p)[d];
 }
 
 template <int D>

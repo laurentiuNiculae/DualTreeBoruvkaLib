@@ -2,6 +2,7 @@
 #include "KDNode.h"
 #include "BoundingBox.h"
 #include <vector>
+#include <iostream>
 #include "Point.h"
 using std::vector;
 
@@ -10,7 +11,7 @@ class KDNodeTerminal : public KDNode<D>
 {
 	vector<Point<D>*>& storedPoints;
 public:
-	KDNodeTerminal<D>(typename vector<Point<D>*>& pointPartition);
+	KDNodeTerminal<D>(typename vector<Point<D>*>& pointPartition, BoundingBox<D> bb);
 	bool isTerminal();
 	KDNode<D>* getLeft();
 	KDNode<D>* getRight();
@@ -21,12 +22,12 @@ public:
 
 
 template <int D>
-KDNodeTerminal<D>::KDNodeTerminal(typename vector<Point<D>*>& pointPartition)
+KDNodeTerminal<D>::KDNodeTerminal(typename vector<Point<D>*>& pointPartition, BoundingBox<D> bb)
 	: storedPoints(pointPartition)
 {
 	this->allConnected = false;
 	this->upperBound = INFINITY;
-	this->bb = BoundingBox<D>(pointPartition.begin(), pointPartition.end());
+	this->bb = bb;
 }
 
 template <int D>

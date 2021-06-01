@@ -19,6 +19,7 @@ public:
 	bool operator ==(Edge<D>& edge);
 	bool operator !=(Edge<D>& edge);
 	bool operator <(const Edge<D>& edge) const;
+	float lenght();
 };
 
 template <int D>
@@ -81,4 +82,10 @@ bool Edge<D>::operator<(const Edge<D>& edge) const
 		}
 	}
 	return false;
+}
+
+template<int D>
+inline float Edge<D>::lenght()
+{
+	return distance(*p1, *p2);
 }

@@ -3,6 +3,7 @@
 #include "Edge.h"
 #include "DisjointSet.h"
 #include "BoundingBox.h"
+#include <algorithm>
 #include <set>
 
 using std::set;
@@ -15,7 +16,7 @@ class DualTreeBoruvka
 	DisjointSet<D> pointSet;
 	map<conexComponent<D>*, float> dCq;
 	map<conexComponent<D>*, Edge<D>*> eCq;
-	map<KDNode<D>*, float> dQc;
+	map<KDNode<D>*, float> dQ;
 
 	bool areSameComponent(KDNode<D>* Q, KDNode<D>* R);
 	void updateFullyConnectedStates(KDNode<D>* node);
@@ -64,7 +65,7 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 		FindComponentNeighbors(q, q, e);
 		if (eCq.size() == 0)
 		{
-			for (auto& i : dQc)
+			for (auto& i : dQ)
 			{
 				i.second = INFINITY;
 			}
@@ -72,15 +73,12 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 		for (auto i : eCq)
 		{
 			pointSet.Union(i.second->getNode1(), i.second->getNode2());
-			//if (E.size() < treeSize - 1)
-				E.emplace(*i.second);
-			cout << (*i.second).toString() << "\n";
+			E.emplace(*i.second);
 		}
-		cout <<"\n";
+		
 		UpdateTree(q);
-
 		updateFullyConnectedStates(q);
-		std::cout << "Progress: " <<  (float)(E.size()) / (float)(treeSize - 1) << "%" << std::endl;
+		std::cout << "Progress: " <<  (float)(E.size()) << "/" <<  (float)(treeSize - 1) << std::endl;
 		i++;
 
 	}
@@ -95,12 +93,10 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 		pointSet.Find(Q->getFirstPoint()) == pointSet.Find(R->getFirstPoint())
 		)
 	{
-		//cout << "EXITED" << std::endl;
 		return;
 	}
-	if (bbDistance(Q->getbb(), R->getbb()) > dQc[Q])
+	if (bbDistance(Q->getbb(), R->getbb()) > dQ[Q])
 	{
-		//cout << "Didn't check: \n";
 		return;
 	}
 	if (Q->isTerminal() && R->isTerminal())
@@ -127,17 +123,16 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 						}
 
 						closestPoint = r;
-						cout << "xD";
 					}
 				}
 			}
 		}
-		dQc.insert(pair<KDNode<D>*, float>(Q, 0));
+		dQ.insert(pair<KDNode<D>*, float>(Q, 0));
 		for (auto q : ((KDNodeTerminal<D>*)Q)->getPoints())
 		{
-			if (dQc[Q] < dCq[pointSet.Find(q)])
+			if (dQ[Q] < dCq[pointSet.Find(q)])
 			{
-				dQc[Q] = dCq[pointSet.Find(q)];
+				dQ[Q] = dCq[pointSet.Find(q)];
 			}
 		}
 	}
@@ -147,7 +142,7 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 		FindComponentNeighbors(Q->getLeft(), R->getRight(), e);
 		FindComponentNeighbors(Q->getRight(), R->getLeft(), e);
 		FindComponentNeighbors(Q->getRight(), R->getRight(), e);
-		dQc[Q] = std::max(dQc[Q->getLeft()], dQc[Q->getRight()]);
+		dQ[Q] = std::max(dQ[Q->getLeft()], dQ[Q->getRight()]);
 	}
 
 }

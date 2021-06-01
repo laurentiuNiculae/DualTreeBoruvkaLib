@@ -13,7 +13,10 @@ public:
 	Point<D> maximalPoint;
 	BoundingBox();
 	BoundingBox(typename vector<Point<D>*>::iterator iter, typename vector<Point<D>*>::iterator end);
+    BoundingBox(typename vector<Point<D>*>::iterator iter, typename vector<Point<D>*>::iterator end, Point<D>* lastSplitMade);
 	BoundingBox(typename BoundingBox<D>& bb1,typename BoundingBox<D>& bb2);
+    void setMinimalPoint(Point<D>* p);
+    void setMaximanPoint(Point<D>* p);
 
     template <int D_>
 	friend float bbDistance(typename BoundingBox<D_>& bb1,typename BoundingBox<D_>& bb2);
@@ -22,6 +25,8 @@ public:
 template<int D>
 inline BoundingBox<D>::BoundingBox()
 {
+    minimalPoint = Point<D>();
+    maximalPoint = Point<D>();
 }
 
 template<int D>
@@ -39,6 +44,20 @@ inline BoundingBox<D>::BoundingBox(typename vector<Point<D>*>::iterator iter, ty
 }
 
 template<int D>
+inline BoundingBox<D>::BoundingBox(typename vector<Point<D>*>::iterator iter, typename vector<Point<D>*>::iterator end, Point<D>* lastSplitMade)
+{
+    minimalPoint = *lastSplitMade;
+    maximalPoint = *lastSplitMade;
+    while (iter != end) {
+        for (int i = 0; i < D; i++) {
+            minimalPoint[i] = std::min(minimalPoint[i], (*(*iter))[i]);
+            maximalPoint[i] = std::max(maximalPoint[i], (*(*iter))[i]);
+        }
+        iter++;
+    }
+}
+
+template<int D>
 inline BoundingBox<D>::BoundingBox(BoundingBox& bb1, BoundingBox& bb2)
 {
     for (int i = 0; i < D; i++)
@@ -46,6 +65,18 @@ inline BoundingBox<D>::BoundingBox(BoundingBox& bb1, BoundingBox& bb2)
         minimalPoint[i] = std::min(bb1.minimalPoint[i], bb2.minimalPoint[i]);
         maximalPoint[i] = std::max(bb1.maximalPoint[i], bb2.maximalPoint[i]);
     }
+}
+
+template<int D>
+inline void BoundingBox<D>::setMinimalPoint(Point<D>* p)
+{
+    minimalPoint = *p;
+}
+
+template<int D>
+inline void BoundingBox<D>::setMaximanPoint(Point<D>* p)
+{
+    maximalPoint = *p;
 }
 
 template <int D_>

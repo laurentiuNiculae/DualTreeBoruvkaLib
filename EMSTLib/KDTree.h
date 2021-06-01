@@ -22,16 +22,21 @@ template <int D>
 using SplitedVector = pair<vector<Point<D>*>, vector<Point<D>*>>;
 
 template <int D>
+using SplitedBoundingBox = pair<BoundingBox<D>, BoundingBox<D>>;
+
+template <int D>
 class KDTree
 {
 	int k;
+	BoundingBox<D> fullBB;
 	KDNode<D>* root;
-	KDNode<D>* makeTerminal(typename vector<Point<D>*>& pointsPartition);
-	KDNode<D>* makeNonTerminal(int d, float p, KDNode<D>* left, KDNode<D>* right);
-	KDNode<D>* buildTree(typename vector<Point<D>*>& points);
+	KDNode<D>* makeTerminal(typename vector<Point<D>*>& pointsPartition, BoundingBox<D> bb);
+	KDNode<D>* makeNonTerminal(int d, Point<D>* p, BoundingBox<D> bb, KDNode<D>* left, KDNode<D>* right);
+	KDNode<D>* buildTree(typename vector<Point<D>*>& points, Point<D>* lastSplitMade, BoundingBox<D> lastBB);
 	int spreadest(int d, typename vector<Point<D>*> pointsPartition);
-	float median(int d, typename vector<Point<D>*> pointsPartition);
-	SplitedVector<D>& splitVector(int d, float p, typename vector<Point<D>*>& pointsPartition);
+	Point<D>* medianPoint(int d, typename vector<Point<D>*> pointsPartition);
+	SplitedVector<D>& splitVector(int d, Point<D>* p, typename vector<Point<D>*>& pointsPartition);
+	SplitedBoundingBox<D> splitBoundingBox(int d, Point<D>* splitPoint, BoundingBox<D> lastBB);
 
 	//typedef pair<vector<Point<D>*>, vector<Point<D>*>> SplitedVector;
 
@@ -50,7 +55,46 @@ template <int D>
 KDTree<D>::KDTree(int k, typename vector<Point<D>*> points)
 {
 	this->k = k;
-	this->root = buildTree(points);
+	fullBB = BoundingBox<D>(points.begin(), points.end());
+	this->root = buildTree(points, nullptr, fullBB);
+}
+
+template <int D>
+KDNode<D>* KDTree<D>::buildTree(typename vector<Point<D>*>& points, Point<D>* lastSplitPoint, BoundingBox<D> lastBB)
+{
+	int d = 0, j, maxspread;
+	Point<D>* p;
+
+	if (points.size() <= k)
+	{
+		return this->makeTerminal(points, lastBB);
+	}
+	maxspread = 0;
+	for (j = 0; j < D; j++)
+	{
+		if (spreadest(j, points) > maxspread)
+		{
+			maxspread = spreadest(j, points);
+			d = j;
+		}
+	}
+	std::sort(points.begin(), points.end(), [d](Point<D>* a, Point<D>* b) { return (*a)[d] < (*b)[d]; });
+	p = this->medianPoint(d, points);
+	SplitedVector<D>& pointPartition = this->splitVector(d, p, points);
+	SplitedBoundingBox<D> boundingBoxPair = this->splitBoundingBox(d, p, lastBB);
+	return this->makeNonTerminal(d, p, lastBB, this->buildTree(pointPartition.first, p, boundingBoxPair.first), this->buildTree(pointPartition.second, p, boundingBoxPair.second));
+}
+
+template <int D>
+KDNode<D>* KDTree<D>::makeTerminal(typename vector<Point<D>*>& pointsPartition, BoundingBox<D> bb)
+{
+	return new KDNodeTerminal<D>(pointsPartition, bb);
+}
+
+template <int D>
+KDNode<D>* KDTree<D>::makeNonTerminal(int d, Point<D>* p, BoundingBox<D> bb, KDNode<D>* left, KDNode<D>* right)
+{
+	return new KDNodeNonTerminal<D>(d, p, bb, left, right);
 }
 
 template <int D>
@@ -135,49 +179,6 @@ inline void KDTree<D>::bfsWithVisitor2(int h, typename KDNode<D>* node, std::fun
 	bfs(h + 1, ((KDNodeNonTerminal<D>*)node)->getRight());
 }
 
-
-
-template <int D>
-KDNode<D>* KDTree<D>::buildTree(typename vector<Point<D>*>& points)
-{
-	int d = 0, j, maxspread;
-	float p;
-
-	if (points.size() <= k)
-	{
-		return this->makeTerminal(points);
-	}
-	maxspread = 0;
-	for (j = 0; j < D; j++)
-	{
-		if (spreadest(j, points) > maxspread)
-		{
-			maxspread = spreadest(j, points);
-			d = j;
-		}
-	}
-	std::sort(points.begin(), points.end(), [d](Point<D>* a, Point<D>* b) { return (*a)[d] < (*b)[d]; });
-	p = this->median(d, points);
-	SplitedVector<D>& pointPartition = this->splitVector(d, p, points);
-	return this->makeNonTerminal(d, p, this->buildTree(pointPartition.first), this->buildTree(pointPartition.second));
-}
-
-template <int D>
-KDNode<D>* KDTree<D>::makeTerminal(typename vector<Point<D>*>& pointsPartition)
-{
-	if (pointsPartition.size() == 0)
-	{
-		return nullptr;
-	}
-	return new KDNodeTerminal<D>(pointsPartition);
-}
-
-template <int D>
-KDNode<D>* KDTree<D>::makeNonTerminal(int d, float p, KDNode<D>* left, KDNode<D>* right)
-{
-	return new KDNodeNonTerminal<D>(d, p, left, right);
-}
-
 template <int D>
 int KDTree<D>::spreadest(int d, typename vector<Point<D>*> subFile)
 {
@@ -199,22 +200,21 @@ int KDTree<D>::spreadest(int d, typename vector<Point<D>*> subFile)
 }
 
 template <int D>
-float KDTree<D>::median(int d, typename vector<Point<D>*> subFile)
+Point<D>* KDTree<D>::medianPoint(int d, typename vector<Point<D>*> subFile)
 {
 	// need better algoritm
-	float myMedian = (*subFile[subFile.size() / 2])[d];
-	return myMedian;
+	Point<D>* median = subFile[subFile.size() / 2];
+	return median;
 }
 
 template <int D>
-SplitedVector<D>& KDTree<D>::splitVector(int d, float p, typename vector<Point<D>*>& pointsPartition)
+SplitedVector<D>& KDTree<D>::splitVector(int d, Point<D>* p, typename vector<Point<D>*>& pointsPartition)
 {
 	vector<Point<D>*>* first = new vector<Point<D>*>();
 	vector<Point<D>*>* second = new vector<Point<D>*>();
 	int midPoint = pointsPartition.size() / 2;
 	for (int i = 0; i < pointsPartition.size(); i++)
 	{
-		//cout << pointsPartition[i][d] << '\n';
 		if (i < midPoint)
 		{
 			first->push_back(pointsPartition[i]);
@@ -226,4 +226,22 @@ SplitedVector<D>& KDTree<D>::splitVector(int d, float p, typename vector<Point<D
 	}
 
 	return *new SplitedVector<D>(*first, *second);
+}
+
+template<int D>
+inline SplitedBoundingBox<D> KDTree<D>::splitBoundingBox(int d, Point<D>* splitPoint, BoundingBox<D> lastBB)
+{
+	BoundingBox<D> firstBB;
+	BoundingBox<D> secondBB;
+
+	firstBB.minimalPoint = lastBB.minimalPoint;
+	firstBB.maximalPoint = lastBB.maximalPoint;
+	firstBB.maximalPoint[d] = (*splitPoint)[d];
+
+	secondBB.minimalPoint = lastBB.minimalPoint;
+	secondBB.maximalPoint = lastBB.maximalPoint;
+	secondBB.minimalPoint[d] = (*splitPoint)[d];
+
+
+	return SplitedBoundingBox<D>(firstBB, secondBB);
 }

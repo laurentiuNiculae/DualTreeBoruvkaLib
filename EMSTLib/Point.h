@@ -18,6 +18,7 @@ public:
 	unsigned int getSize();
 	std::string toString();
 	float& operator[](int i);
+	int getIndex();
 
 	template <int D_>
 	friend float distance(Point& p1, Point& p2);
@@ -60,6 +61,8 @@ inline Point<D>::Point(std::initializer_list<float> params)
 	{
 		throw "Can't initialize, Vector size doesn't match!";
 	}
+	index = globalIndex;
+	globalIndex++;
 	int i = 0;
 	for (auto& x : params)
 	{
@@ -91,6 +94,12 @@ template<unsigned int D>
 inline float& Point<D>::operator[](int i)
 {
 	return coord[i];
+}
+
+template<unsigned int D>
+inline int Point<D>::getIndex()
+{
+	return index;
 }
 
 template<unsigned int D>

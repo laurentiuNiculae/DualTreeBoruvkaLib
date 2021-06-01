@@ -1,83 +1,40 @@
 ﻿  EMSTCLI.cpp
 C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNode.h(2,1): warning C4005: 'INFINITY': macro redefinition
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h(90): message : see previous definition of 'INFINITY'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(15,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(16,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(20,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(21,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(22,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(24,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(25,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(26,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(28,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(29,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(31,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(34,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(37,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(39,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(41,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(42,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(43,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(44,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(45,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(49,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(51,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(56,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(58,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(61,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(62,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(66,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(67,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(68,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(71,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(72,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(73,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(74,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(75,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(78,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(81,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(82,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(83,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(85,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(87,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(89,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(91,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(92,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(94,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(97,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(100,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(101,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(102,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(106,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(107,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(110,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(111,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(113,71): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(12,23): warning C4101: 'generator': unreferenced local variable
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(61,18): warning C4018: '<': signed/unsigned mismatch
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(57): message : while compiling class template member function 'std::set<Edge<2>,std::less<Edge<2>>,std::allocator<Edge<2>>> DualTreeBoruvka<2>::findEMST(KDNode<2> *,int)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(121): message : see reference to function template instantiation 'std::set<Edge<2>,std::less<Edge<2>>,std::allocator<Edge<2>>> DualTreeBoruvka<2>::findEMST(KDNode<2> *,int)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(120): message : see reference to class template instantiation 'DualTreeBoruvka<2>' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(69,1): warning C4305: '=': truncation from '__int64' to '_Ty2'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\TestDataGenerator.h(24,17): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(15): message : see reference to function template instantiation 'std::vector<Point<2> *,std::allocator<Point<2> *>> TestDataGenerator::generateUniformData<2>(int,float,float)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(62,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(58): message : while compiling class template member function 'std::set<Edge<2>,std::less<Edge<2>>,std::allocator<Edge<2>>> DualTreeBoruvka<2>::findEMST(KDNode<2> *,int)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(20): message : see reference to function template instantiation 'std::set<Edge<2>,std::less<Edge<2>>,std::allocator<Edge<2>>> DualTreeBoruvka<2>::findEMST(KDNode<2> *,int)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(19): message : see reference to class template instantiation 'DualTreeBoruvka<2>' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(70,1): warning C4305: '=': truncation from '__int64' to '_Ty2'
           with
           [
               _Ty2=float
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(146,20): warning C4018: '<=': signed/unsigned mismatch
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(142): message : while compiling class template member function 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(53): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(51): message : while compiling class template member function 'KDTree<2>::KDTree(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(119): message : see reference to function template instantiation 'KDTree<2>::KDTree(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(119): message : see reference to class template instantiation 'KDTree<2>' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(160,1): warning C4305: '=': truncation from '__int64' to '_Ty2'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Point.h(85,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Point.h(82): message : while compiling class template member function 'std::string Point<2>::toString(void)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Edge.h(35): message : see reference to function template instantiation 'std::string Point<2>::toString(void)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(15): message : see reference to function template instantiation 'std::vector<Point<2> *,std::allocator<Point<2> *>> TestDataGenerator::generateUniformData<2>(int,float,float)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(68,20): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(64): message : while compiling class template member function 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &,Point<2> *,BoundingBox<2>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(59): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &,Point<2> *,BoundingBox<2>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(56): message : while compiling class template member function 'KDTree<2>::KDTree(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(18): message : see reference to function template instantiation 'KDTree<2>::KDTree(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(18): message : see reference to class template instantiation 'KDTree<2>' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(155,1): warning C4305: '=': truncation from '__int64' to '_Ty2'
           with
           [
               _Ty2=float
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(157): message : while compiling class template member function 'void DualTreeBoruvka<2>::UpdateTree(KDNode<2> *)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(80): message : see reference to function template instantiation 'void DualTreeBoruvka<2>::UpdateTree(KDNode<2> *)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(42): message : while compiling class template member function 'DualTreeBoruvka<2>::DualTreeBoruvka(KDTree<2> &,std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(120): message : see reference to function template instantiation 'DualTreeBoruvka<2>::DualTreeBoruvka(KDTree<2> &,std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(152): message : while compiling class template member function 'void DualTreeBoruvka<2>::UpdateTree(KDNode<2> *)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(79): message : see reference to function template instantiation 'void DualTreeBoruvka<2>::UpdateTree(KDNode<2> *)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(43): message : while compiling class template member function 'DualTreeBoruvka<2>::DualTreeBoruvka(KDTree<2> &,std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(19): message : see reference to function template instantiation 'DualTreeBoruvka<2>::DualTreeBoruvka(KDTree<2> &,std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(192,1): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
           with
           [
@@ -87,34 +44,27 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
           [
               _Ty2=float
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(51): message : see reference to function template instantiation 'std::pair<conexComponent<2> *,float>::pair<conexComponent<2>*&,__int64,0>(_Other1,_Other2 &&) noexcept' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(52): message : see reference to function template instantiation 'std::pair<conexComponent<2> *,float>::pair<conexComponent<2>*&,__int64,0>(_Other1,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=conexComponent<2> *&,
               _Other2=__int64
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(51): message : see reference to function template instantiation 'std::pair<conexComponent<2> *,float>::pair<conexComponent<2>*&,__int64,0>(_Other1,_Other2 &&) noexcept' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(52): message : see reference to function template instantiation 'std::pair<conexComponent<2> *,float>::pair<conexComponent<2>*&,__int64,0>(_Other1,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=conexComponent<2> *&,
               _Other2=__int64
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Point.h(82,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Point.h(79): message : while compiling class template member function 'std::string Point<2>::toString(void)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Edge.h(34): message : see reference to function template instantiation 'std::string Point<2>::toString(void)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\Edge.h(33): message : while compiling class template member function 'std::string Edge<2>::toString(void)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(77): message : see reference to function template instantiation 'std::string Edge<2>::toString(void)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(57): message : while compiling class template member function 'std::set<Edge<2>,std::less<Edge<2>>,std::allocator<Edge<2>>> DualTreeBoruvka<2>::findEMST(KDNode<2> *,int)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTCLI\EMSTCLI.cpp(121): message : see reference to function template instantiation 'std::set<Edge<2>,std::less<Edge<2>>,std::allocator<Edge<2>>> DualTreeBoruvka<2>::findEMST(KDNode<2> *,int)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(187,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(183): message : while compiling class template member function 'int KDTree<2>::spreadest(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(153): message : see reference to function template instantiation 'int KDTree<2>::spreadest(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(142): message : while compiling class template member function 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(53): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(198,17): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(215,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(211): message : while compiling class template member function 'std::pair<std::vector<Point<2> *,std::allocator<Point<2> *>>,std::vector<Point<2> *,std::allocator<Point<2> *>>> &KDTree<2>::splitVector(int,float,std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(161): message : see reference to function template instantiation 'std::pair<std::vector<Point<2> *,std::allocator<Point<2> *>>,std::vector<Point<2> *,std::allocator<Point<2> *>>> &KDTree<2>::splitVector(int,float,std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(188,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(184): message : while compiling class template member function 'int KDTree<2>::spreadest(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(75): message : see reference to function template instantiation 'int KDTree<2>::spreadest(int,std::vector<Point<2> *,std::allocator<Point<2> *>>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(64): message : while compiling class template member function 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &,Point<2> *,BoundingBox<2>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(59): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::buildTree(std::vector<Point<2> *,std::allocator<Point<2> *>> &,Point<2> *,BoundingBox<2>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(199,17): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(216,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(212): message : while compiling class template member function 'std::pair<std::vector<Point<2> *,std::allocator<Point<2> *>>,std::vector<Point<2> *,std::allocator<Point<2> *>>> &KDTree<2>::splitVector(int,Point<2> *,std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(83): message : see reference to function template instantiation 'std::pair<std::vector<Point<2> *,std::allocator<Point<2> *>>,std::vector<Point<2> *,std::allocator<Point<2> *>>> &KDTree<2>::splitVector(int,Point<2> *,std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(192,1): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
           with
           [
@@ -124,29 +74,29 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
           [
               _Ty2=float
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(135): message : see reference to function template instantiation 'std::pair<KDNode<2> *,float>::pair<KDNode<2>*&,int,0>(_Other1,_Other2 &&) noexcept' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(130): message : see reference to function template instantiation 'std::pair<KDNode<2> *,float>::pair<KDNode<2>*&,int,0>(_Other1,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=KDNode<2> *&,
               _Other2=int
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(135): message : see reference to function template instantiation 'std::pair<KDNode<2> *,float>::pair<KDNode<2>*&,int,0>(_Other1,_Other2 &&) noexcept' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(130): message : see reference to function template instantiation 'std::pair<KDNode<2> *,float>::pair<KDNode<2>*&,int,0>(_Other1,_Other2 &&) noexcept' being compiled
           with
           [
               _Other1=KDNode<2> *&,
               _Other2=int
           ]
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(93): message : while compiling class template member function 'void DualTreeBoruvka<2>::FindComponentNeighbors(KDNode<2> *,KDNode<2> *,std::vector<Edge<2> *,std::allocator<Edge<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(64): message : see reference to function template instantiation 'void DualTreeBoruvka<2>::FindComponentNeighbors(KDNode<2> *,KDNode<2> *,std::vector<Edge<2> *,std::allocator<Edge<2> *>> &)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeTerminal.h(28,1): warning C4305: '=': truncation from '__int64' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeTerminal.h(25): message : while compiling class template member function 'KDNodeTerminal<2>::KDNodeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(172): message : see reference to function template instantiation 'KDNodeTerminal<2>::KDNodeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(167): message : while compiling class template member function 'KDNode<2> *KDTree<2>::makeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(148): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::makeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(91): message : while compiling class template member function 'void DualTreeBoruvka<2>::FindComponentNeighbors(KDNode<2> *,KDNode<2> *,std::vector<Edge<2> *,std::allocator<Edge<2> *>> &)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\DualTreeBoruvka.h(65): message : see reference to function template instantiation 'void DualTreeBoruvka<2>::FindComponentNeighbors(KDNode<2> *,KDNode<2> *,std::vector<Edge<2> *,std::allocator<Edge<2> *>> &)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeTerminal.h(29,1): warning C4305: '=': truncation from '__int64' to 'float'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeTerminal.h(26): message : while compiling class template member function 'KDNodeTerminal<2>::KDNodeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &,BoundingBox<2>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(91): message : see reference to function template instantiation 'KDNodeTerminal<2>::KDNodeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &,BoundingBox<2>)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(90): message : while compiling class template member function 'KDNode<2> *KDTree<2>::makeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &,BoundingBox<2>)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(70): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::makeTerminal(std::vector<Point<2> *,std::allocator<Point<2> *>> &,BoundingBox<2>)' being compiled
 C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeNonTerminal.h(29,1): warning C4305: '=': truncation from '__int64' to 'float'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeNonTerminal.h(26): message : while compiling class template member function 'KDNodeNonTerminal<2>::KDNodeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(178): message : see reference to function template instantiation 'KDNodeNonTerminal<2>::KDNodeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(178): message : see reference to class template instantiation 'KDNodeNonTerminal<2>' being compiled
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(177): message : while compiling class template member function 'KDNode<2> *KDTree<2>::makeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)'
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(162): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::makeNonTerminal(int,float,KDNode<2> *,KDNode<2> *)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDNodeNonTerminal.h(26): message : while compiling class template member function 'KDNodeNonTerminal<2>::KDNodeNonTerminal(int,Point<2> *,BoundingBox<2>,KDNode<2> *,KDNode<2> *)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(97): message : see reference to function template instantiation 'KDNodeNonTerminal<2>::KDNodeNonTerminal(int,Point<2> *,BoundingBox<2>,KDNode<2> *,KDNode<2> *)' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(97): message : see reference to class template instantiation 'KDNodeNonTerminal<2>' being compiled
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(96): message : while compiling class template member function 'KDNode<2> *KDTree<2>::makeNonTerminal(int,Point<2> *,BoundingBox<2>,KDNode<2> *,KDNode<2> *)'
+C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\KDTree.h(85): message : see reference to function template instantiation 'KDNode<2> *KDTree<2>::makeNonTerminal(int,Point<2> *,BoundingBox<2>,KDNode<2> *,KDNode<2> *)' being compiled
   EMSTCLI.vcxproj -> C:\Users\theme\source\repos\EMSTLicenta\Debug\EMSTCLI.exe
