@@ -31,7 +31,7 @@ template<unsigned int D>
 inline Point<D>::Point()
 {
 	index = globalIndex;
-	globalIndex++;
+	globalIndex = globalIndex + 1;
 	for (int i = 0; i < D; i++)
 	{
 		coord[i] = 0.0f;

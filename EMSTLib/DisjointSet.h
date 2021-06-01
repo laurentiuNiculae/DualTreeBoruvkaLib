@@ -22,10 +22,11 @@ using PointToNode = std::pair<Point<D>*, conexComponent<D>*>;
 template<int D>
 class DisjointSet
 {
-	map<Point<D>*, conexComponent<D>*> elementsToNodes;
-	set<conexComponent<D>*> allComponents;
 	Point<D>* parent(Point<D>* point);
 public:
+	map<Point<D>*, conexComponent<D>*> elementsToNodes;
+	set<conexComponent<D>*> allComponents;
+
 	void MakeSet(Point<D>* newPoint);
 	conexComponent<D>* Find(Point<D>* searchPoint);
 	conexComponent<D>* Find(conexComponent<D>* searchNode);

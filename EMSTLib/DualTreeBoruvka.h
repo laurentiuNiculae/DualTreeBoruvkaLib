@@ -13,7 +13,7 @@ class DualTreeBoruvka
 {
 	KDTree<D>& tree;
 	vector<Point<D>*>& points;
-	DisjointSet<D> pointSet;
+	
 	map<conexComponent<D>*, float> dCq;
 	map<conexComponent<D>*, Edge<D>*> eCq;
 	map<KDNode<D>*, float> dQ;
@@ -21,6 +21,7 @@ class DualTreeBoruvka
 	bool areSameComponent(KDNode<D>* Q, KDNode<D>* R);
 	void updateFullyConnectedStates(KDNode<D>* node);
 public:
+	DisjointSet<D> pointSet;
 	DualTreeBoruvka(KDTree<D>& tree, vector<Point<D>*>& points);
 	set<Edge<D>> findEMST(KDNode<D>* q, int treeSize);
 	void FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vector<Edge<D>* >& e);
@@ -82,10 +83,11 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 		
 		UpdateTree(q);
 		updateFullyConnectedStates(q);
-		std::cout << "Progress: " <<  (float)(E.size()) << "/" <<  (float)(treeSize - 1) << std::endl;
+		std::cout << "Progress: " <<  (float)(E.size()) << "/" <<  (float)(treeSize - 1) << " || " << "ConexNr: "<< pointSet.allComponents.size()  <<  std::endl;
 		i++;
 
 	}
+	std::cout << "\n";
 
 	return E;
 }
@@ -99,9 +101,9 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 	{
 		return;
 	}
-	if (dQ[Q] != 0 && bbDistance(Q->getbb(), R->getbb()) > dQ[Q])
+	if (bbDistance(Q->getbb(), R->getbb()) > dQ[Q])
 	{
-		//std::cout << bbDistance(Q->getbb(), R->getbb());
+		bbDistance(Q->getbb(), R->getbb());
 		return;
 	}
 	if (Q->isTerminal() && R->isTerminal())
@@ -145,8 +147,8 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 	else
 	{
 		FindComponentNeighbors(Q->getLeft(), R->getLeft(), e);
-		FindComponentNeighbors(Q->getLeft(), R->getRight(), e);
 		FindComponentNeighbors(Q->getRight(), R->getLeft(), e);
+		FindComponentNeighbors(Q->getLeft(), R->getRight(), e);
 		FindComponentNeighbors(Q->getRight(), R->getRight(), e);
 		dQ[Q] = std::max(dQ[Q->getLeft()], dQ[Q->getRight()]);
 	}

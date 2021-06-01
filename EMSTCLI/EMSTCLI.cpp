@@ -6,82 +6,95 @@
 #include "DualTreeBoruvka.h"
 #include "TestDataGenerator.h"
 
-int main()
+void testSpeed()
 {
-    
     TestDataGenerator generator;
-    bool foundMistake = false;
-
-    vector<Point<2>*> myPoints = generator.generateUniformData<2>(20000, -10000, 10000);
+    vector<Point<2>*> myPoints = generator.generateUniformData<2>(100000, -100000, 100000);
     set<Edge<2>> E;
     
-    KDTree<2> KDT(64, myPoints);
+    KDTree<2> KDT(5, myPoints);
     //KDT.bfsBB(0, KDT.getRoot());
     DualTreeBoruvka<2> DTB(KDT, myPoints);
     E = DTB.findEMST(KDT.getRoot(), myPoints.size());
     std::cout << E.size();
+}
 
-    //vector<Point<2>*> myPoints;
+void testPoints()
+{
+    vector<Point<2>*> myPoints;
+
+    myPoints.emplace_back(new Point<2>({ -185.708252, 100.261108 }));
+    myPoints.emplace_back(new Point<2>({ 920.368042, 180.849243 }));
+    myPoints.emplace_back(new Point<2>({ 877.297485, -378.849182 }));
+    myPoints.emplace_back(new Point<2>({ 446.734741, 955.640991 }));
+    myPoints.emplace_back(new Point<2>({ 708.169800, -699.095581 }));
+    myPoints.emplace_back(new Point<2>({ -759.525635, 455.308960 }));
+    myPoints.emplace_back(new Point<2>({ -771.558472, 386.505127 }));
+    myPoints.emplace_back(new Point<2>({ 15.622009, 562.160156 }));
+    myPoints.emplace_back(new Point<2>({ -169.612305, -833.791870 }));
+    myPoints.emplace_back(new Point<2>({ -307.942200, -293.087769 }));
+    myPoints.emplace_back(new Point<2>({ -721.318909, 260.983276 }));
+    myPoints.emplace_back(new Point<2>({ 639.645630, -315.830017 }));
+    myPoints.emplace_back(new Point<2>({ 472.025635, -127.475281 }));
+    myPoints.emplace_back(new Point<2>({ -61.904175, -906.766602 }));
+    myPoints.emplace_back(new Point<2>({ -914.589294, -605.567566 }));
+    myPoints.emplace_back(new Point<2>({ 625.163452, 952.364258 }));
+    myPoints.emplace_back(new Point<2>({ -272.863892, 683.356689 }));
+    myPoints.emplace_back(new Point<2>({ -108.361572, 770.449829 }));
+    myPoints.emplace_back(new Point<2>({ 652.850098, -799.945557 }));
+    myPoints.emplace_back(new Point<2>({ -130.671936, -910.033752 }));
+
+
+
+    KDTree<2> KDT(5, myPoints);
+    DualTreeBoruvka<2> DTB(KDT, myPoints);
+    set<Edge<2>> E;
+    E = DTB.findEMST(KDT.getRoot(), myPoints.size());
+    std::cout << E.size();
+}
+
+void generateMistakeSet()
+{
+    TestDataGenerator generator;
+    bool foundMistake = false;
+
+    while (foundMistake == false)
+    {
+        vector<Point<2>*> myPoints = generator.generateUniformData<2>(10000, -1000, 1000);
+        set<Edge<2>> E;
+        KDTree<2> KDT(5, myPoints);
+        DualTreeBoruvka<2> DTB(KDT, myPoints);
+        E = DTB.findEMST(KDT.getRoot(), myPoints.size());
     
-    //myPoints.emplace_back(new Point<2>({-996.534973, -865.843506   }));
-    //myPoints.emplace_back(new Point<2>({- 225.898865, 162.316040   }));
-    //myPoints.emplace_back(new Point<2>({- 766.175476, 461.352417   }));
-    //myPoints.emplace_back(new Point<2>({- 852.856079, -427.529846  }));
-    //myPoints.emplace_back(new Point<2>({821.949097, -92.638000     }));
-    //myPoints.emplace_back(new Point<2>({846.413574, -791.986084    }));
-    //myPoints.emplace_back(new Point<2>({- 22.900452, 166.709595    }));
-    //myPoints.emplace_back(new Point<2>({592.125366, -123.592163    }));
-    //myPoints.emplace_back(new Point<2>({35.801392, 405.183350      }));
-    //myPoints.emplace_back(new Point<2>({- 971.708679, -761.587219  }));
-    //myPoints.emplace_back(new Point<2>({232.392578, 720.849121     }));
-    //myPoints.emplace_back(new Point<2>({622.648438, 671.357666     }));
-    //myPoints.emplace_back(new Point<2>({- 359.391296, -215.362732  }));
-    //myPoints.emplace_back(new Point<2>({728.203857, -341.341675    }));
-    //myPoints.emplace_back(new Point<2>({- 792.102722, 967.157593   }));
-    //myPoints.emplace_back(new Point<2>({- 862.872620, 100.148315   }));
-    //myPoints.emplace_back(new Point<2>({- 107.468018, 89.926758    }));
-    //myPoints.emplace_back(new Point<2>({976.682007, 694.810181     }));
-    //myPoints.emplace_back(new Point<2>({- 735.640442, 791.786133   }));
-    //myPoints.emplace_back(new Point<2>({820.941772, -673.815796    }));
+        if (E.size() == 999 && DTB.pointSet.allComponents.size() >= 2)
+        {
+            for (auto i : myPoints)
+            {
+                cout << i->toString() << '\n';
+            }
+        
+            for (auto i : E)
+            {
+                cout << i.toString() << '\n';
+            }
+        
+            foundMistake = true;
+        }
+        else
+        {
+            for (int i = 0; i < myPoints.size(); i++)
+            {
+                delete myPoints[i];
+            }
+            myPoints.clear();
+            E.clear();
+        }
+    }
+}
 
-    //KDTree<2> KDT(5, myPoints);
-    //KDT.bfsBB(0, KDT.getRoot());
-    //DualTreeBoruvka<2> DTB(KDT, myPoints);
-    //set<Edge<2>> E;
-    //E = DTB.findEMST(KDT.getRoot(), myPoints.size());
-    //std::cout << E.size();
-
-    //while (foundMistake == false)
-    //{
-    //    vector<Point<2>*> myPoints = generator.generateUniformData<2>(20, -1000, 1000);
-    //    set<Edge<2>> E;
-    //    KDTree<2> KDT(5, myPoints);
-    //    DualTreeBoruvka<2> DTB(KDT, myPoints);
-    //    E = DTB.findEMST(KDT.getRoot(), myPoints.size());
-    //
-    //    if (E.size() >= myPoints.size())
-    //    {
-    //        for (auto i : myPoints)
-    //        {
-    //            cout << i->toString() << '\n';
-    //        }
-    //
-    //        for (auto i : E)
-    //        {
-    //            cout << i.toString() << '\n';
-    //        }
-    //
-    //        foundMistake = true;
-    //    }
-    //    else
-    //    {
-    //        for (int i = 0; i < myPoints.size(); i++)
-    //        {
-    //            delete myPoints[i];
-    //        }
-    //        myPoints.clear();
-    //        E.clear();
-    //    }
-    //}
-
+int main()
+{
+    //testSpeed();
+    //testPoints();
+    generateMistakeSet();
 }
