@@ -44,6 +44,7 @@ public:
 	KDTree<D>(int k, vector<Point<D>*> points);
 	void dfsPrint();
 	void bfs(int h, typename KDNode<D>* node);
+	void bfsBB(int h, KDNode<D>* node);
 	void bfsWithVisitor(int h, typename KDNode<D>* node, void (*visitor)(KDNode<D>* node));
 	void bfsWithVisitor2(int h, typename KDNode<D>* node, std::function<void(KDNode<D>*)> visitor);
 	void bfsPrint();
@@ -160,6 +161,39 @@ void KDTree<D>::bfs(int h, KDNode<D>* node)
 		cout << std::endl;
 		bfs(h + 1, ((KDNodeNonTerminal<D>*)node)->getLeft());
 		bfs(h + 1, ((KDNodeNonTerminal<D>*)node)->getRight());
+	}
+}
+
+template <int D>
+void KDTree<D>::bfsBB(int h, KDNode<D>* node)
+{
+	if (node->isTerminal())
+	{
+		for (int k = 0; k < h; k++) cout << "---";
+		cout << "(" << node->bb.minimalPoint.toString() << ")" << "(" << node->bb.maximalPoint.toString() << ")\n";
+		int contor = 0;
+		for (auto i : ((KDNodeTerminal<D>*)node)->getPoints())
+		{
+			if (contor == 0)
+			{
+				for (int k = 0; k < h; k++) cout << "   -";
+			}
+			else
+			{
+				for (int k = 0; k < h; k++) cout << "    ";
+			}
+			cout << i->toString();
+			cout << std::endl;
+			contor++;
+		}
+	}
+	else
+	{
+		for (int k = 0; k < h; k++) cout << "    ";
+		cout << "(" << node->bb.minimalPoint.toString() <<")" << "(" << node->bb.maximalPoint.toString() << ")";
+		cout << std::endl;
+		bfsBB(h + 1, ((KDNodeNonTerminal<D>*)node)->getLeft());
+		bfsBB(h + 1, ((KDNodeNonTerminal<D>*)node)->getRight());
 	}
 }
 

@@ -75,6 +75,10 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 			pointSet.Union(i.second->getNode1(), i.second->getNode2());
 			E.emplace(*i.second);
 		}
+		for (auto i : E)
+		{
+			cout << i.toString() << "\n";
+		}
 		
 		UpdateTree(q);
 		updateFullyConnectedStates(q);
