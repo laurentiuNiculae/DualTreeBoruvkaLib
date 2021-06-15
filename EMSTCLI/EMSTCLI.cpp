@@ -5,6 +5,7 @@
 #include <set>
 #include "DualTreeBoruvka.h"
 #include "TestDataGenerator.h"
+#include <fstream>
 
 void testSpeed()
 {
@@ -15,42 +16,44 @@ void testSpeed()
     KDTree<2> KDT(5, myPoints);
     //KDT.bfsBB(0, KDT.getRoot());
     DualTreeBoruvka<2> DTB(KDT, myPoints);
+    DTB.printProgressFlag = true;
     E = DTB.findEMST(KDT.getRoot(), myPoints.size());
     std::cout << E.size();
 }
 
+vector<Point<2>*> readPointsFromFile()
+{
+    std::ifstream f("C:\\Users\\theme\\source\\repos\\EMSTLicenta\\EMSTCLI\\Points.txt");
+    vector<Point<2>*> myPoints;
+    float a, b;
+    while (f >> a >> b)
+    {
+        myPoints.emplace_back(new Point<2>({ a, b }));
+    }
+    f.close();
+    return myPoints;
+}
+
 void testPoints()
 {
-    vector<Point<2>*> myPoints;
-
-    myPoints.emplace_back(new Point<2>({ -185.708252, 100.261108 }));
-    myPoints.emplace_back(new Point<2>({ 920.368042, 180.849243 }));
-    myPoints.emplace_back(new Point<2>({ 877.297485, -378.849182 }));
-    myPoints.emplace_back(new Point<2>({ 446.734741, 955.640991 }));
-    myPoints.emplace_back(new Point<2>({ 708.169800, -699.095581 }));
-    myPoints.emplace_back(new Point<2>({ -759.525635, 455.308960 }));
-    myPoints.emplace_back(new Point<2>({ -771.558472, 386.505127 }));
-    myPoints.emplace_back(new Point<2>({ 15.622009, 562.160156 }));
-    myPoints.emplace_back(new Point<2>({ -169.612305, -833.791870 }));
-    myPoints.emplace_back(new Point<2>({ -307.942200, -293.087769 }));
-    myPoints.emplace_back(new Point<2>({ -721.318909, 260.983276 }));
-    myPoints.emplace_back(new Point<2>({ 639.645630, -315.830017 }));
-    myPoints.emplace_back(new Point<2>({ 472.025635, -127.475281 }));
-    myPoints.emplace_back(new Point<2>({ -61.904175, -906.766602 }));
-    myPoints.emplace_back(new Point<2>({ -914.589294, -605.567566 }));
-    myPoints.emplace_back(new Point<2>({ 625.163452, 952.364258 }));
-    myPoints.emplace_back(new Point<2>({ -272.863892, 683.356689 }));
-    myPoints.emplace_back(new Point<2>({ -108.361572, 770.449829 }));
-    myPoints.emplace_back(new Point<2>({ 652.850098, -799.945557 }));
-    myPoints.emplace_back(new Point<2>({ -130.671936, -910.033752 }));
-
-
+    vector<Point<2>*> myPoints = readPointsFromFile();
 
     KDTree<2> KDT(5, myPoints);
+    KDT.bfsPrint();
+
     DualTreeBoruvka<2> DTB(KDT, myPoints);
-    set<Edge<2>> E;
-    E = DTB.findEMST(KDT.getRoot(), myPoints.size());
+    DTB.printEveryIterationFlag = true;
+    DTB.printProgressFlag = true;
+
+    set<Edge<2>> E = DTB.findEMST(KDT.getRoot(), myPoints.size());
     std::cout << E.size();
+
+    std::ofstream edges("C:\\Users\\theme\\OneDrive\\Desktop\\LICENTA\\Actual Licenta\\PlottingTests\\edges.txt");
+    for (auto i : E)
+    {
+        edges << i.toString() << '\n';
+    }
+    edges.close();
 }
 
 void generateMistakeSet()
@@ -60,13 +63,26 @@ void generateMistakeSet()
 
     while (foundMistake == false)
     {
-        vector<Point<2>*> myPoints = generator.generateUniformData<2>(10000, -1000, 1000);
+        vector<Point<2>*> myPoints = generator.generateUniformData<2>(1000, -1000, 1000);
         set<Edge<2>> E;
         KDTree<2> KDT(5, myPoints);
         DualTreeBoruvka<2> DTB(KDT, myPoints);
+        DTB.printProgressFlag = true;
         E = DTB.findEMST(KDT.getRoot(), myPoints.size());
-    
-        if (E.size() == 999 && DTB.pointSet.allComponents.size() >= 2)
+        
+        double mean = 0;
+        int i = 1;
+        for ( auto it = E.begin(); it != E.end(); it++)
+        {
+            auto wow = *it;
+            mean = mean * (i - 1) / i + wow.lenght() / i;
+            i++;
+        }
+
+        cout << "MEAN IS: " << mean;
+        
+
+        if (E.size() >= 999 && DTB.pointSet.allComponents.size() != 1)
         {
             for (auto i : myPoints)
             {
@@ -91,6 +107,8 @@ void generateMistakeSet()
         }
     }
 }
+
+
 
 int main()
 {

@@ -32,7 +32,12 @@ Edge<D>::Edge(Point<D>* p1, Point<D>* p2)
 template <int D>
 string Edge<D>::toString()
 {
-	return p1->toString().append(p2->toString());
+	string aux;
+	aux.append(std::to_string((*p1)[0])).append(" ");
+	aux.append(std::to_string((*p1)[1])).append(" ");
+	aux.append(std::to_string((*p2)[0])).append(" ");
+	aux.append(std::to_string((*p2)[1])).append(" ");
+	return aux;
 }
 
 template <int D>
@@ -87,5 +92,5 @@ bool Edge<D>::operator<(const Edge<D>& edge) const
 template<int D>
 inline float Edge<D>::lenght()
 {
-	return distance(*p1, *p2);
+	return distance<D>(*p1, *p2);
 }

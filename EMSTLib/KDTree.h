@@ -139,16 +139,13 @@ void KDTree<D>::bfs(int h, KDNode<D>* node)
 	if (node->isTerminal())
 	{
 		int contor = 0;
+		for (int k = 0; k < h; k++) cout << "   -";
+		cout << "[index=" << (((KDNodeNonTerminal<D>*)node)->getbb()).index << "]" << (((KDNodeNonTerminal<D>*)node)->getbb().toString()) << "\n";
+		contor++;
 		for (auto i : ((KDNodeTerminal<D>*)node)->getPoints())
 		{
-			if (contor == 0)
-			{
-				for (int k = 0; k < h; k++) cout << "   -";
-			}
-			else
-			{
-				for (int k = 0; k < h; k++) cout << "    ";
-			}
+			for (int k = 0; k < h; k++) cout << "    ";
+
 			cout << i->toString();
 			cout << std::endl;
 			contor++;
@@ -157,7 +154,7 @@ void KDTree<D>::bfs(int h, KDNode<D>* node)
 	else
 	{
 		for (int k = 0; k < h; k++) cout << "    ";
-		cout << "[" << "d=" << ((KDNodeNonTerminal<D>*)node)->getDimension() << "p=" << ((KDNodeNonTerminal<D>*)node)->getMedian() << "]";
+		cout << "[" << "d=" << ((KDNodeNonTerminal<D>*)node)->getDimension() << "p=" << ((KDNodeNonTerminal<D>*)node)->getMedian() << " index=" << (((KDNodeNonTerminal<D>*)node)->getbb()).index << "]" << ((KDNodeNonTerminal<D>*)node)->getbb().toString();
 		cout << std::endl;
 		bfs(h + 1, ((KDNodeNonTerminal<D>*)node)->getLeft());
 		bfs(h + 1, ((KDNodeNonTerminal<D>*)node)->getRight());

@@ -87,6 +87,9 @@ inline std::string Point<D>::toString()
 		str += std::to_string(this->coord[i]) + ",";
 	}
 	//str += ")";
+	str += "[";
+	str += std::to_string(this->index);
+	str += "]";
 	return str;
 }
 

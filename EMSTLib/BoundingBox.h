@@ -2,31 +2,41 @@
 #include <vector>
 #include <algorithm>
 #include "Point.h"
+#include <string>
 
 using std::vector;
+using std::string;
 
 template <int D>
 class BoundingBox
 {
 public:
+    static int globalIndex;
 	Point<D> minimalPoint;
 	Point<D> maximalPoint;
+    int index;
 	BoundingBox();
 	BoundingBox(typename vector<Point<D>*>::iterator iter, typename vector<Point<D>*>::iterator end);
     BoundingBox(typename vector<Point<D>*>::iterator iter, typename vector<Point<D>*>::iterator end, Point<D>* lastSplitMade);
 	BoundingBox(typename BoundingBox<D>& bb1,typename BoundingBox<D>& bb2);
     void setMinimalPoint(Point<D>* p);
     void setMaximanPoint(Point<D>* p);
+    string toString();
 
     template <int D_>
 	friend float bbDistance(typename BoundingBox<D_>& bb1,typename BoundingBox<D_>& bb2);
 };
+
+template <int D>
+int BoundingBox<D>::globalIndex = 0;
 
 template<int D>
 inline BoundingBox<D>::BoundingBox()
 {
     minimalPoint = Point<D>();
     maximalPoint = Point<D>();
+    index = globalIndex;
+    globalIndex += 1;
 }
 
 template<int D>
@@ -41,6 +51,8 @@ inline BoundingBox<D>::BoundingBox(typename vector<Point<D>*>::iterator iter, ty
         }
         iter++;
     }
+    index = globalIndex;
+    globalIndex += 1;
 }
 
 template<int D>
@@ -55,6 +67,8 @@ inline BoundingBox<D>::BoundingBox(typename vector<Point<D>*>::iterator iter, ty
         }
         iter++;
     }
+    index = globalIndex;
+    globalIndex += 1;
 }
 
 template<int D>
@@ -65,6 +79,8 @@ inline BoundingBox<D>::BoundingBox(BoundingBox& bb1, BoundingBox& bb2)
         minimalPoint[i] = std::min(bb1.minimalPoint[i], bb2.minimalPoint[i]);
         maximalPoint[i] = std::max(bb1.maximalPoint[i], bb2.maximalPoint[i]);
     }
+    index = globalIndex;
+    globalIndex += 1;
 }
 
 template<int D>
@@ -77,6 +93,14 @@ template<int D>
 inline void BoundingBox<D>::setMaximanPoint(Point<D>* p)
 {
     maximalPoint = *p;
+}
+
+template<int D>
+inline string BoundingBox<D>::toString()
+{
+    string str;
+    str += minimalPoint.toString() + " - " + maximalPoint.toString();
+    return str;
 }
 
 template <int D_>

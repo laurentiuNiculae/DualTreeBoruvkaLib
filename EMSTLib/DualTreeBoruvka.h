@@ -18,9 +18,13 @@ class DualTreeBoruvka
 	map<conexComponent<D>*, Edge<D>*> eCq;
 	map<KDNode<D>*, float> dQ;
 
+
 	bool areSameComponent(KDNode<D>* Q, KDNode<D>* R);
 	void updateFullyConnectedStates(KDNode<D>* node);
 public:
+	bool printEveryIterationFlag;
+	bool printLastIterationFlag;
+	bool printProgressFlag;
 	DisjointSet<D> pointSet;
 	DualTreeBoruvka(KDTree<D>& tree, vector<Point<D>*>& points);
 	set<Edge<D>> findEMST(KDNode<D>* q, int treeSize);
@@ -41,7 +45,7 @@ bool DualTreeBoruvka<D>::areSameComponent(KDNode<D>* Q, KDNode<D>* R)
 
 template <int D>
 DualTreeBoruvka<D>::DualTreeBoruvka(KDTree<D>& tree, typename vector<Point<D>*>& points)
-	: tree(tree), points(points)
+	: tree(tree), points(points), printEveryIterationFlag(false), printLastIterationFlag(false), printProgressFlag(false)
 {
 	for (auto i : points)
 	{
@@ -63,12 +67,13 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 	while (E.size() < treeSize - 1)
 	{
 		e.clear();
+		UpdateTree(q);
 		FindComponentNeighbors(q, q, e);
 		if (eCq.size() == 0)
 		{
 			for (auto& i : dQ)
 			{
-				i.second = INFINITY;
+				i.second = std::numeric_limits<float>::max();
 			}
 		}
 		for (auto i : eCq)
@@ -76,16 +81,28 @@ set<Edge<D>> DualTreeBoruvka<D>::findEMST(KDNode<D>* q, int treeSize)
 			pointSet.Union(i.second->getNode1(), i.second->getNode2());
 			E.emplace(*i.second);
 		}
-		//for (auto i : E)
-		//{
-		//	cout << i.toString() << "\n";
-		//}
+		if (printEveryIterationFlag == true)
+		{
+			for (auto i : E)
+			{
+				cout << i.toString() << "\n";
+			}
+		}
 		
-		UpdateTree(q);
 		updateFullyConnectedStates(q);
-		std::cout << "Progress: " <<  (float)(E.size()) << "/" <<  (float)(treeSize - 1) << " || " << "ConexNr: "<< pointSet.allComponents.size()  <<  std::endl;
+		if (printProgressFlag == true)
+		{
+			std::cout << "Progress: " <<  (float)(E.size()) << "/" <<  (float)(treeSize - 1) << " || " << "ConexNr: "<< pointSet.allComponents.size()  <<  std::endl;
+		}
 		i++;
 
+	}
+	if (!printEveryIterationFlag && printLastIterationFlag)
+	{
+		for (auto i : E)
+		{
+			cout << i.toString() << "\n";
+		}
 	}
 	std::cout << "\n";
 
@@ -101,7 +118,7 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 	{
 		return;
 	}
-	if (bbDistance(Q->getbb(), R->getbb()) > dQ[Q])
+	if (bbDistance(Q->getbb(), R->getbb()) > dQ[Q] + 45)
 	{
 		bbDistance(Q->getbb(), R->getbb());
 		return;
@@ -109,6 +126,7 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 	if (Q->isTerminal() && R->isTerminal())
 	{
 		Point<D>* closestPoint = nullptr;
+		dQ[Q] = 0;
 		for (auto q : ((KDNodeTerminal<D>*)Q)->getPoints())
 		{
 			closestPoint = nullptr;
@@ -133,16 +151,20 @@ void DualTreeBoruvka<D>::FindComponentNeighbors(KDNode<D>* Q, KDNode<D>* R, vect
 					}
 				}
 			}
-		}
-		//dQ.insert(pair<KDNode<D>*, float>(Q, 0));
-		dQ[Q] = 0;
-		for (auto q : ((KDNodeTerminal<D>*)Q)->getPoints())
-		{
 			if (dQ[Q] < dCq[pointSet.Find(q)])
 			{
 				dQ[Q] = dCq[pointSet.Find(q)];
 			}
 		}
+		//dQ.insert(pair<KDNode<D>*, float>(Q, 0));
+		//
+		//for (auto q : ((KDNodeTerminal<D>*)Q)->getPoints())
+		//{
+		//	if (dQ[Q] < dCq[pointSet.Find(q)])
+		//	{
+		//		dQ[Q] = dCq[pointSet.Find(q)];
+		//	}
+		//}
 	}
 	else
 	{
@@ -160,8 +182,12 @@ void DualTreeBoruvka<D>::UpdateTree(KDNode<D>* q)
 {
 	for (auto& i : dCq)
 	{
-		i.second = INFINITY;
+		i.second = std::numeric_limits<float>::max();
 	}
+	//for (auto& i : dQ)
+	//{
+	//	i.second = std::numeric_limits<float>::max();
+	//}
 	eCq.clear();
 }
 
