@@ -1,2 +1,0 @@
-C:\Users\theme\source\repos\EMSTLicenta\x64\Debug\EMSTLib.pdb
-C:\Users\theme\source\repos\EMSTLicenta\EMSTLib\x64\Debug\EMSTLib.pdb
